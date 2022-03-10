@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('content')
-  <h1>Crea prodotto</h1>
+  <h1>Modifica prodotto</h1>
 
   <form action="{{ route('comics.store') }}" method="POST">
 
@@ -21,7 +21,7 @@
     <div class="form-group">
       <label for="description">Descrizione</label>
       <textarea class="form-control" id="description" name="description"
-        placeholder="Inserisci la descrizione dell'opera">value="{{ $comic->description }}"</textarea>
+        placeholder="Inserisci la descrizione dell'opera">{{ $comic->description }}"</textarea>
     </div>
     <div class="form-group">
       <label for="price">Prezzo</label>
@@ -46,6 +46,6 @@
       </select>
     </div>
 
-    <button type="submit" class="btn btn-primary">Crea</button>
+    <button type="submit" class="btn btn-primary">Conferma modifiche</button>
   </form>
 @endsection

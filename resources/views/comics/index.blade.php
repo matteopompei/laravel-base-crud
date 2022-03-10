@@ -1,6 +1,10 @@
 @extends('layouts.base')
 
 @section('content')
+  <a href="{{ route('comics.create') }}">
+    <button type="button" class="btn btn-success">Aggiungi</button>
+  </a>
+
   <table class="table">
     <thead>
       <tr>

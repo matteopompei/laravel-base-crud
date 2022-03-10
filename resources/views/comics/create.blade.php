@@ -12,6 +12,11 @@
       <input type="text" class="form-control" id="title" name="title" placeholder="Inserisci il nome dell'opera">
     </div>
     <div class="form-group">
+      <label for="thumb">Copertina</label>
+      <input type="url" class="form-control" id="thumb" name="thumb"
+        placeholder="Inserisci il link dell'immagine di copertina">
+    </div>
+    <div class="form-group">
       <label for="description">Descrizione</label>
       <textarea class="form-control" id="description" name="description"
         placeholder="Inserisci la descrizione dell'opera"></textarea>

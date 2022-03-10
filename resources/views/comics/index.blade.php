@@ -2,7 +2,7 @@
 
 @section('content')
   <a href="{{ route('comics.create') }}">
-    <button type="button" class="btn btn-success">Aggiungi</button>
+    <button type="button" class="btn btn-success my-3">Aggiungi</button>
   </a>
 
   <table class="table">
@@ -27,11 +27,16 @@
           <td>{{ $comic->type }}</th>
           <td>
             <a href="{{ route('comics.show', $comic->id) }}">
-              <button type="button" class="btn btn-primary">Mostra</button>
-            </a>
+              <button type="button" class="btn btn-primary mb-2">Mostra</button>
+            </a> <br>
             <a href="{{ route('comics.edit', $comic->id) }}">
-              <button type="button" class="btn btn-secondary">Modifica</button>
-            </a>
+              <button type="button" class="btn btn-secondary mb-2">Modifica</button>
+            </a> <br>
+            <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+              @csrf
+              @method("DELETE")
+              <button type="submit" class="btn btn-danger">Elimina</button>
+            </form>
         </tr>
       @endforeach
     </tbody>

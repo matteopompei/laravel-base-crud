@@ -6,7 +6,9 @@
   <form action="{{ route('comics.store') }}" method="POST">
 
     @csrf
-
+    @if ($errors->any())
+      {{ implode('', $errors->all('<div>:message</div>')) }}
+    @endif
     <div class="form-group">
       <label for="title">Titolo</label>
       <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
@@ -59,8 +61,8 @@
       <label for="type">Tipologia</label>
       <select class="form-control form-control-md" id="type" name="type">
         <option value="" disabled selected hidden>Scegli la tipologia dell'opera</option>
-        <option value="comic book" {{ old('type') == 'comic book' ? 'selected' : null }}>Comic book</option>
-        <option value="graphic novel" {{ old('type') == 'graphic novel' ? 'selected' : null }}>Graphic novel</option>
+        <option value="Comic book" {{ old('type') == 'Comic book' ? 'selected' : null }}>Comic book</option>
+        <option value="Graphic novel" {{ old('type') == 'Graphic novel' ? 'selected' : null }}>Graphic novel</option>
       </select>
     </div>
 

@@ -6,9 +6,7 @@
   <form action="{{ route('comics.store') }}" method="POST">
 
     @csrf
-    @if ($errors->any())
-      {{ implode('', $errors->all('<div>:message</div>')) }}
-    @endif
+
     <div class="form-group">
       <label for="title">Titolo</label>
       <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
